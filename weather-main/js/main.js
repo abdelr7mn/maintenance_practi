@@ -1,4 +1,4 @@
-let apiKey = "1e3e8f230b6064d27976e41163a82b77";
+ let apiKey = "1e3e8f230b6064d27976e41163a82b77";
 
 navigator.geolocation.getCurrentPosition(async function (position) {
    
@@ -27,16 +27,41 @@ navigator.geolocation.getCurrentPosition(async function (position) {
         let tempMinWeather = document.getElementById("temp-min-today");
         let tempMaxWeather = document.getElementById("temp-max-today");
 // Fares Mohammed Hosni
-        cityMain.innerHTML = data.city.name;
-        cityTemp.innerHTML = Math.floor(data.list[0].main.temp) + "°";
-        weatherMain[0].innerHTML = data.list[0].weather[0].description;
-        weatherMain[1].innerHTML = data.list[0].weather[0].description;
-        mainHumidity.innerHTML = Math.floor(data.list[0].main.humidity);
-        mainFeel.innerHTML = Math.floor(data.list[0].main.feels_like);
-        tempMinWeather.innerHTML = Math.floor(data.list[0].main.temp_min) + "°";
-        tempMaxWeather.innerHTML = Math.floor(data.list[0].main.temp_max) + "°";
+      // عرض اسم المدينة
+console.log("City Name:", data.city.name);
+cityMain.innerHTML = data.city.name;
 
-        let weatherCondition = data.list[0].weather[0].main.toLowerCase();
+// عرض درجة الحرارة
+console.log("Temperature:", data.list[0].main.temp);
+cityTemp.innerHTML = Math.floor(data.list[0].main.temp) + "°";
+
+// عرض وصف الطقس
+console.log("Weather Description (First):", data.list[0].weather[0].description);
+weatherMain[0].innerHTML = data.list[0].weather[0].description;
+
+console.log("Weather Description (Second):", data.list[0].weather[0].description);
+weatherMain[1].innerHTML = data.list[0].weather[0].description;
+
+// عرض نسبة الرطوبة
+console.log("Humidity:", data.list[0].main.humidity);
+mainHumidity.innerHTML = Math.floor(data.list[0].main.humidity);
+
+// عرض درجة الحرارة المحسوسة
+console.log("Feels Like Temperature:", data.list[0].main.feels_like);
+mainFeel.innerHTML = Math.floor(data.list[0].main.feels_like);
+
+// عرض أقل درجة حرارة
+console.log("Minimum Temperature:", data.list[0].main.temp_min);
+tempMinWeather.innerHTML = Math.floor(data.list[0].main.temp_min) + "°";
+
+// عرض أعلى درجة حرارة
+console.log("Maximum Temperature:", data.list[0].main.temp_max);
+tempMaxWeather.innerHTML = Math.floor(data.list[0].main.temp_max) + "°";
+
+// عرض حالة الطقس
+let weatherCondition = data.list[0].weather[0].main.toLowerCase();
+console.log("Weather Condition:", weatherCondition);
+
 
         if (weatherCondition === "rain") {
             weatherImg.src = "img/rain.png";
