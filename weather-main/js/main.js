@@ -32,8 +32,10 @@ console.log("City Name:", data.city.name);
 cityMain.innerHTML = data.city.name;
 
 // عرض درجة الحرارة
-console.log("Temperature:", data.list[0].main.temp);
-cityTemp.innerHTML = Math.floor(data.list[0].main.temp) + "°";
+// عرض درجة الحرارة
+console.log("Temperature (in Fahrenheit):", data.list[0].main.temp * 9/5 + 32);
+cityTemp.innerHTML = Math.floor(data.list[0].main.temp * 9/5 + 32) + "°F"; 
+
 
 // عرض وصف الطقس
 console.log("Weather Description (First):", data.list[0].weather[0].description);
@@ -43,19 +45,19 @@ console.log("Weather Description (Second):", data.list[0].weather[0].description
 weatherMain[1].innerHTML = data.list[0].weather[0].description;
 
 // عرض نسبة الرطوبة
-console.log("Humidity1:", data.list[0].main.humidity);
+console.log("Humidity:", data.list[0].main.humidity);
 mainHumidity.innerHTML = Math.floor(data.list[0].main.humidity);
 
 // عرض درجة الحرارة المحسوسة
-console.log("Feels Like Temperature2:", data.list[0].main.feels_like);
+console.log("Feels Like Temperature:", data.list[0].main.feels_like);
 mainFeel.innerHTML = Math.floor(data.list[0].main.feels_like);
 
 // عرض أقل درجة حرارة
-console.log("Minimum Temperature3:", data.list[0].main.temp_min);
+console.log("Minimum Temperature:", data.list[0].main.temp_min);
 tempMinWeather.innerHTML = Math.floor(data.list[0].main.temp_min) + "°";
 
 // عرض أعلى درجة حرارة
-console.log("Maximum Temperature4:", data.list[0].main.temp_max);
+console.log("Maximum Temperature40:", data.list[0].main.temp_max);
 tempMaxWeather.innerHTML = Math.floor(data.list[0].main.temp_max) + "°";
 
 // عرض حالة الطقس
