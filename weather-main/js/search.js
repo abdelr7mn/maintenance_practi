@@ -59,8 +59,9 @@ async function search(city, state, country){
 
 
 searchinput.addEventListener('keydown', function(event) {
-    if (event.keyCode === 13 || event.which === 13) {
-        search(searchinput.value);
-        console.log("worked")
-      }
-  });
+  if (event.key === "Enter") {
+      search(searchinput.value);
+      console.log("worked");
+  }
+});
+  
