@@ -38,8 +38,10 @@ cityTemp.innerHTML = Math.floor(data.list[0].main.temp * 9/5 + 32) + "°F";
 
 
 // عرض وصف الطقس
+// تغيير على طريقة عرض وصف الطقس
 console.log("Weather Description (First):", data.list[0].weather[0].description);
-weatherMain[0].innerHTML = data.list[0].weather[0].description;
+weatherMain[0].innerHTML = "Clear Sky";
+
 
 console.log("Weather Description (Second):", data.list[0].weather[0].description);
 weatherMain[1].innerHTML = data.list[0].weather[0].description;
