@@ -50,5 +50,7 @@ Usage
 
 Screenshots
 ![Screenshot (293)](https://github.com/user-attachments/assets/0195c64a-ed09-43f7-863a-6a7b54103fc7)
+![image](https://github.com/user-attachments/assets/7a84b841-2d18-4d45-9a23-a3d295c14aad)
+
 
 
