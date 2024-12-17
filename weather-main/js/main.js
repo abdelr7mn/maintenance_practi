@@ -26,7 +26,7 @@ navigator.geolocation.getCurrentPosition(async function (position) {
         let weatherImgs = document.querySelector(".weather-icons");
         let tempMinWeather = document.getElementById("temp-min-today");
         let tempMaxWeather = document.getElementById("temp-max-today");
-
+// Fares Mohammed Hosni
         cityMain.innerHTML = data.city.name;
         cityTemp.innerHTML = Math.floor(data.list[0].main.temp) + "°";
         weatherMain[0].innerHTML = data.list[0].weather[0].description;
