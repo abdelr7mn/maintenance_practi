@@ -58,30 +58,28 @@ tempMinWeather.innerHTML = Math.floor(data.list[0].main.temp_min) + "°";
 console.log("Maximum Temperature4:", data.list[0].main.temp_max);
 tempMaxWeather.innerHTML = Math.floor(data.list[0].main.temp_max) + "°";
 
-// عرض حالة الطقس
 let weatherCondition = data.list[0].weather[0].main.toLowerCase();
 console.log("Weather Condition:", weatherCondition);
 
+// كائن يحتوي على الصور المرتبطة بكل حالة طقس
+const weatherImages = {
+    rain: "img/rain.png",
+    clear: "img/sun.png",
+    "clear sky": "img/sun.png",
+    snow: "img/snow.png",
+    clouds: "img/cloud.png",
+    smoke: "img/cloud.png",
+    mist: "img/mist.png",
+    fog: "img/mist.png",
+    haze: "img/haze.png"
+};
 
-        if (weatherCondition === "rain") {
-            weatherImg.src = "img/rain.png";
-            weatherImgs.src = "img/rain.png";
-        } else if (weatherCondition === "clear" || weatherCondition === "clear sky") {
-            weatherImg.src = "img/sun.png";
-            weatherImgs.src = "img/sun.png";
-        } else if (weatherCondition === "snow") {
-            weatherImg.src = "img/snow.png";
-            weatherImgs.src = "img/snow.png";
-        } else if (weatherCondition === "clouds" || weatherCondition === "smoke") {
-            weatherImg.src = "img/cloud.png";
-            weatherImgs.src = "img/cloud.png";
-        } else if (weatherCondition === "mist" || weatherCondition === "Fog") {
-            weatherImg.src = "img/mist.png";
-            weatherImgs.src = "img/mist.png";
-        } else if (weatherCondition === "haze") {
-            weatherImg.src = "img/haze.png"  ;
-            weatherImgs.src = "img/haze.png";
-        }
+// تعيين الصورة بناءً على حالة الطقس
+let imageSrc = weatherImages[weatherCondition] || "img/default.png"; // إذا لم يتم العثور على الحالة، استخدم صورة افتراضية
+
+// تعيين الصور للصور المختلفة
+weatherImg.src = imageSrc;
+weatherImgs.src = imageSrc;
 
         // Fetch and display 5-day forecast data
         const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${data.city.name}&appid=${apiKey}&units=metric`;
