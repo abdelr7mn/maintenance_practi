@@ -39,9 +39,8 @@ cityTemp.innerHTML = Math.floor(data.list[0].main.temp * 9/5 + 32) + "°F";
 
 // عرض وصف الطقس
 // تغيير على طريقة عرض وصف الطقس
-console.log("Weather Description (First):", data.list[0].weather[0].description);
-weatherMain[0].innerHTML = "clearly Cloudy";
-
+console.log("Weather Description (Firsty):", data.list[0].weather[0].description);
+weatherMain[0].innerHTML = "Partly clouddyy";
 
 console.log("Weather Description (Second):", data.list[0].weather[0].description);
 weatherMain[1].innerHTML = data.list[0].weather[0].description;
